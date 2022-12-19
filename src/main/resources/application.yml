@@ -1,0 +1,22 @@
+server:
+  port: 8080
+  ssl:
+    key-store: loopgain.work.pfx
+    key-store-password: sdva7e3fjt8
+
+template:
+  templates:
+    - {"templateId":"1","templateFilePath":"E:/JAVA/kafka/kafka_study/src/main/resources/templates/template.json","active": true}
+    - {"templateId":"2","templateFilePath":"E:/JAVA/kafka/kafka_study/src/main/resources/templates/template.json","active": false}
+  template-result-type: 0  # 0-文件获取 1-数据库获取 2-ES
+  template-result-file-path: "E:/JAVA/kafka/kafka_study/src/main/resources/templates/templateResult.json"
+
+wechat:
+  kafka:
+    bootstrap_servers: "192.168.211.130:9092"
+    acks_config: "all"
+    partitioner_class: "com.example.kafkastudy.producer.SamplePartition"
+
+
+logging:
+  config: classpath:logback.xml
